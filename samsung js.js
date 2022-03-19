@@ -42,30 +42,7 @@ function showSlides(n) {
 
 
 
-//making the slides for the second slider-container FIRST WAY OF DOING IT ADVANCED
-/*var slideIndex2 = 1;
-showSlides2(slideIndex2);
 
-function currentSlide2(n2) {
-  showSlides2(slideIndex2 = n2);
-}
-
-function showSlides2(n2) {
-  var i;
-  var slides2 = document.getElementsByClassName("mySlides2");
-  var dots = document.getElementsByClassName("dot");
-  var bms2 = document.getElementsByClassName("bm2");
-  if (n2 > slides2.length) {slideIndex2 = 1}
-  if (n2 < 1) {slideIndex2 = slides2.length}
-
-  for (i = 0; i < slides2.length; i++) {
-      slides2[i].style.display = "none";
-  }
-
-  slides2[slideIndex2-1].style.display = "block";
-
-  bms2[slideIndex2-1].className += " active2";
-}*/
 
 
 
@@ -109,6 +86,7 @@ function myFunction2() {
   }
 }
 
+//slide3
 function myFunction3() {
   var x1 = document.querySelector(".first");
   var x2 = document.querySelector(".second");
@@ -127,6 +105,7 @@ function myFunction3() {
   }
 }
 
+//slide4
 function myFunction4() {
   var x1 = document.querySelector(".first");
   var x2 = document.querySelector(".second");
@@ -225,5 +204,35 @@ function showSuggestion(list){
 	}
 	suggBox.innerHTML = listData;
 }
+
+
+
+
+
+
+
+
+
+//making the scroll to the top of the web page button work
+//Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 40px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.documentElement.scrollTop = 0;
+}
+
+
 
 
