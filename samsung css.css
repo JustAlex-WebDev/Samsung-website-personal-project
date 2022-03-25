@@ -33,7 +33,7 @@ nav{
 	color:black;
 	position: absolute;
 	width: 100%;
-	z-index: 999;
+	z-index: 998;
 	height: 65px;
 	line-height: 65px;
 }
@@ -48,7 +48,7 @@ nav .nav-wrapper{
 	justify-content: space-between;
 }
 
-.nav-wrapper .logo a{
+.nav-wrapper .logo > a{
 	color:black;
 	text-decoration: none;
 	font-size: 25px;
@@ -59,11 +59,11 @@ nav .nav-wrapper{
 	display: inline-flex;
 }
 
-.nav-links li{
+.nav-links > li{
 	list-style: none;
 }
 
-.nav-links li a{
+.nav-links > li > a{
 	color:black;
 	text-decoration: none;
 	font-size: 16px;
@@ -73,13 +73,181 @@ nav .nav-wrapper{
 	transition: all 0.3s ease;
 }
 
-.nav-links li a:hover{
+.nav-links > li > a:hover{
 	background:black;
 	color:white;
 }
 
 .left{
 	padding-right: 50px;
+}
+
+nav li:hover .menu-sub{
+	display: block;
+	pointer-events: all;
+	opacity: 1;
+	transform: translateY(0px);
+}
+
+
+
+
+/*styling the navigation bar*/
+.menu-sub,
+.menu-sub2{
+	position: absolute;
+	left: 0;
+	background: white;
+	transform: translateY(-20px);
+	width: 100%;
+	display: block;
+	pointer-events: none;
+	opacity: 0;
+	padding-top: 10px;
+	transition: all 0.3s ease;
+}
+
+.menu-sub2{
+	top:0;
+	height: 100%;
+	display: none;
+	pointer-events: all;
+	opacity: 1;
+	transform: translateY(0px);
+	padding-top: 17.5px;
+}
+
+.menu-sub li:hover .menu-sub2{
+	display: block;
+}
+
+.menu-sub li,
+.menu-sub2 li{
+	width: 150px;
+	line-height: 50px;
+	list-style: none;
+	padding-left:30px;
+}
+
+.menu-sub2 li{
+	width: 350px;
+}
+
+.menu-sub li a,
+.menu-sub2 li a,
+.menu-sub2 .new-menu{
+	color:black;
+	text-decoration: none;
+	font-size: 21px;
+	font-weight: 500;
+	opacity: 0.5;
+}
+
+.menu-sub li:hover a,
+.menu-sub2 > li:hover a,
+.menu-sub2 .new-menu:hover{
+	opacity: 1;
+}
+
+.menu-sub2 .new-menu{
+	padding-top: 2.5px;
+}
+
+.menu-sub2 li{
+	padding-top: 7px;
+}
+
+.menu-category{
+	padding-left:30px;
+}
+
+.menu-sub .menu-category a,
+.menu-sub2 .menu-category a{
+	font-size: 30px;
+	color:black;
+	opacity: 1;
+	font-weight: 600;
+}
+
+.menu-sub2 .menu-category.invisible-menu-category a{
+	opacity: 0;
+	pointer-events: none;
+}
+
+.menu-category .menu-link{
+	position:relative;
+	color:black;
+    padding:7px 0px;
+}
+
+.menu-category .menu-link.active::before{
+	content:'';
+    position:absolute;
+    bottom:5px;
+    left:0;
+    width:100%;
+    height:2px;
+    background:black;
+    transition:all 0.3s ease;
+}
+
+.menu-category .menu-link.active:hover::before{
+	display: none;
+}
+
+.menu-category .menu-link::after{
+	content:'';
+    position:absolute;
+    bottom:5px;
+    width:0%;
+    left:50%;
+    height:2px;
+    background:black;
+    transition:all 0.3s ease;
+}
+
+.menu-category .menu-link:hover::after{
+	left:0;
+    width:100%;
+}
+
+.new-menu .new-menu-link{
+	position:relative;
+	color:black;
+    padding:7px 0px;
+}
+
+.new-menu .new-menu-link::before{
+	content:'';
+    position:absolute;
+    bottom:5px;
+    left:0;
+    width:100%;
+    height:2px;
+    background:black;
+    transition:all 0.3s ease;
+    display: none;
+}
+
+.new-menu .new-menu-link::after{
+	content:'';
+    position:absolute;
+    bottom:5px;
+    width:0%;
+    left:50%;
+    height:2px;
+    background:black;
+    transition:all 0.3s ease;
+}
+
+.new-menu .new-menu-link:hover::after{
+	left:0;
+    width:100%;
+}
+
+.menu-col-1,
+.menu-col-2{
+	float: left;
 }
 
 
