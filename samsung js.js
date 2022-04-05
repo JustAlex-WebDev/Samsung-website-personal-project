@@ -4,17 +4,20 @@ const menuright = document.querySelector(".right");
 const menuBtn = document.querySelector(".menu-btn");
 const cancelBtn = document.querySelector(".cancel-btn");
 const menuOpacityRes = document.querySelector(".menu-opacity-res");
+const searchIcon = document.querySelector(".search-icon");
 menuBtn.onclick = ()=>{
 	menuleft.classList.add("menu-active");
 	menuright.classList.add("menu-active");
 	menuBtn.classList.add("hide");
 	menuOpacityRes.style.display = "flex";
+	searchIcon.style.display = "none";
 }
 cancelBtn.onclick = ()=>{
 	menuleft.classList.remove("menu-active");
 	menuright.classList.remove("menu-active");
 	menuBtn.classList.remove("hide");
 	menuOpacityRes.style.display = "none";
+	searchIcon.style.display = "flex";
 }
 
 
@@ -259,6 +262,7 @@ function scrollFunction() {
 function topFunction() {
   document.documentElement.scrollTop = 0;
 }
+
 
 
 
