@@ -21,6 +21,7 @@
 /*changes to the scroll behavior*/
 html{
 	scroll-behavior: smooth;
+	/*min-width: 582px;*/
 }
 
 
@@ -73,7 +74,10 @@ nav{
 nav .nav-container{
 	position: relative;
 	max-width: 1250px;
-	padding: 0 30px;
+	padding-top:0;
+	padding-bottom: 0;
+	padding-right: 30px;
+	padding-left: 40px;
 	margin: auto;
 	display: flex;
 	align-items: center;
@@ -95,7 +99,7 @@ nav .nav-container{
 	list-style: none;
 }
 
-.nav-links > li > a{
+.nav-links > li > .nav-list-links{
 	color:black;
 	text-decoration: none;
 	font-size: 14px;
@@ -105,10 +109,15 @@ nav .nav-container{
 	transition: all 0.3s ease;
 }
 
-.nav-links > li > a:hover{
+.nav-links > li > .nav-list-links:hover{
 	background:black;
 	color:white;
 }
+
+/*.nav-list-links-active{
+	background: black;
+	color:white;
+}*/
 
 .left{
 	margin-left: 50px;
@@ -118,6 +127,7 @@ nav .nav-container{
 	margin-left: 130px;
 }
 
+/*setting up the sub-menues*/
 nav li:hover .menu-opacity{
 	position: fixed;
 	left:0;
@@ -159,6 +169,11 @@ nav li:hover .menu-background{
 	opacity: 1;
 	transform: translateY(-20px);
 	display: none;
+	transition: all 0.3s ease;
+}
+
+.menu-background.longback{
+	height: 549px;
 }
 
 .menu-sub3{
@@ -166,10 +181,11 @@ nav li:hover .menu-background{
 	background: white;
 	top:65px;
 	left: 0;
-	width: 100%;
+	width: 300px;
+	height: 440px;
 	padding-top: 9.5px;
 	padding-bottom: 10px;
-	padding-left:30px;
+	padding-left:40px;
 	display: block;
 	pointer-events: none;
 	opacity: 0;
@@ -179,7 +195,6 @@ nav li:hover .menu-background{
 }
 
 nav li:hover .menu-sub3{
-	width: 180px;
 	display: block;
 	pointer-events: all;
 	opacity: 1;
@@ -204,6 +219,7 @@ nav li:hover .menu-sub3{
 	font-size: 28px;
 	color:black;
 	opacity: 1;
+	z-index: 1000;
 	font-weight: 600;
 }
 
@@ -223,17 +239,23 @@ nav li:hover .menu-sub3{
 	position: absolute;
 	background: white;
 	top:0;
-	left: 180px;
+	left: 210px;
 	height: 100%;
-	width: 1030px;
+	width: 1010px;
+	z-index: 999;
 	display: block;
 	pointer-events: none;
 	opacity: 0; 
 	padding-top: 75px;
 	padding-bottom: 10px;
 	padding-left:130px;
+	margin-left: 10px;
 	transform: translateX(-40px);
 	transition: all 0.3s ease;
+}
+
+.menu-sub4.longback{
+	height: 549px;
 }
 
 .menu-sub4 li:hover .menu-background{
@@ -337,7 +359,7 @@ nav li:hover .menu-sub3{
 .menu-sub5-description .menu-sub5-description-link{
 	position:relative;
 	color:black;
-    padding:5px 0px;
+    padding:7px 0px;
 }
 
 .menu-sub5-description .menu-sub5-description-link.active::before{
@@ -369,6 +391,10 @@ nav li:hover .menu-sub3{
 .menu-sub5-description .menu-sub5-description-link:hover::after{
 	left:0;
     width:100%;
+}
+
+.menu-sub5 .menu-sub5-img img:hover{
+	transform: scale(1.01);
 }
 
 .menu-sub-category .menu-sub-category-link{
@@ -418,7 +444,148 @@ nav li:hover .menu-sub3{
 .icon.cancel-btn{
 	position: absolute;
 	right: 30px;
+	z-index: 1000;
 	top:0px;
+}
+
+.icon.goback-btn{
+	font-size: 30px;
+	position: absolute;
+	left: 30px;
+	display: none;
+	z-index: 1000;
+	top:20px;
+	transition: all 0.3s ease;
+}
+
+.goback-btn {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    width: 22px;
+    height: 22px
+}
+.goback-btn::after,
+.goback-btn::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    left:3px
+}
+.goback-btn::after {
+    width: 9px;
+    height: 9px;
+    border-bottom: 3px solid;
+    border-left: 3px solid;
+    transform: rotate(45deg);
+    bottom: 7px
+}
+.goback-btn::before {
+    width: 17px;
+    height: 3px;
+    bottom: 10px;
+    background: currentColor
+}
+
+
+
+
+/*setting up the min-sub-menues*/
+nav .min-nav-container{
+	position: fixed;
+	text-align: center;
+	background: white;
+	top:0;
+	right:-100%;
+	max-width: 300px;
+	width: 100%;
+	padding: 0;
+	height: 100vh;
+	display: none;
+	z-index: 998;
+	transition: all 0.3s ease;
+}
+
+.min-nav-links > li:nth-child(1){
+	margin-top: 40px;
+}
+
+.min-nav-links > li{
+	list-style: none;
+	margin-left:50px;
+	margin-right:50px;
+}
+
+.min-nav-links > li > a{
+	color:black;
+	text-decoration: none;
+	font-size: 19px;
+	font-weight: 500;
+	opacity: 0.5;
+	transition: all 0.3s ease;
+}
+
+.min-nav-links > li > a:hover{
+	opacity: 1;
+	background: white;
+	color:black;
+}
+
+.min-nav-links > li > a::after{
+	content:'   >';
+}
+
+.min-nav-container.menu-active{
+	right:0px;
+}
+
+.min-menu-sub3{
+	position: fixed;
+	text-align: center;
+	background: white;
+	top:0;
+	right:-100%;
+	max-width: 300px;
+	width: 100%;
+	height: 100vh;
+	padding: 0;
+	display: block;
+	z-index: 999;
+	transition: all 0.3s ease;
+}
+
+.min-menu-sub3.menu-active2{
+	opacity: 1;
+	right:0;
+}
+
+.min-menu-sub3 .min-menu-sub3-list{
+	list-style: none;
+}
+
+.min-menu-sub3 .min-menu-sub-category{
+	padding-top: 40px;
+}
+
+.min-menu-sub3 .min-menu-sub-category .min-menu-sub-category-link{
+	font-size: 25px;
+	color:black;
+	opacity: 1;
+	font-weight: 600;
+}
+
+.min-menu-sub3 .min-menu-sub3-list .min-menu-sub3-list-link{
+	color:black;
+	text-decoration: none;
+	font-size: 19px;
+	font-weight: 500;
+	opacity: 0.5;
+}
+
+.min-menu-sub3 .min-menu-sub3-list:hover .min-menu-sub3-list-link{
+	opacity: 1;
 }
 
 
@@ -512,9 +679,11 @@ nav li:hover .menu-sub3{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	text-align: center;
 	color: white;
 	margin-bottom: 35px;
-	font-size: 2.8vw;
+	/*font-size: 2.8vw;*/
+	font-size:clamp(2.0rem, 2.8vw, 2.8rem);
 	font-weight: 600;
 }
 
@@ -594,6 +763,7 @@ nav li:hover .menu-sub3{
 .slideshow-container {
   position: relative;
   margin: auto;
+  max-width: 1500px;
 }
 
 .mySlides {
@@ -644,6 +814,7 @@ nav li:hover .menu-sub3{
 	display: flex;
 	flex-direction:row;
 	align-items: center;
+	text-align: center;
 	justify-content: center;
 	gap:30px;
 }
@@ -664,16 +835,19 @@ nav li:hover .menu-sub3{
 .banner h1{
 	padding-bottom:15px;
 	margin:0;
+	background: white;
 	text-align:center;
 	font-weight: 600;
-	font-size:2vw;
+	/*font-size:2vw;*/
+	font-size: clamp(1.4rem, 2vw, 1.8rem);
 }
 
 .banner h2{
 	margin:0;
 	cursor: pointer;
 	margin-left: 5px;
-	font-size:1vw;
+	/*font-size:1vw;*/
+	font-size: clamp(0.7rem, 1vw, 1rem);
 	font-weight: 500;
 	padding-bottom:10px;
 }
@@ -701,7 +875,8 @@ nav li:hover .menu-sub3{
 	margin:0;
 	cursor: pointer;
 	margin-left: 5px;
-	font-size:0.8vw;
+	/*font-size:0.8vw;*/
+	font-size: clamp(0.6rem, 0.8vw, 0.8rem);
 	font-weight: 500;
 	padding-bottom:10px;
 }
@@ -743,28 +918,18 @@ nav li:hover .menu-sub3{
     width:100%;
 }
 
-.banner .lil-box{
-	border-radius: 20px;
-	height: 2vw;
-	margin-bottom: 10px;
-	padding-top: 0.2vw;
-	width: 6.5vw;
-	display: flex;
-	text-align: center;
-	justify-content: center;
-	background-color: black;
-	opacity: 1;
-	transition: opacity 0.3s ease;
-}
-
-.banner .lil-box:hover{
-	opacity: 0.5;
-}
-
 .banner .lil-butt2 a{
 	color:white;
-	margin-right: 5px;
-	font-size:0.8vw;
+	background: black;
+	padding: 7px 13px;
+	border-radius: 15px;
+	/*margin-right: 5px;*/
+	/*font-size:0.8vw;*/
+	font-size: clamp(0.6rem, 0.8vw, 0.8rem);
+}
+
+.banner .lil-butt2 a:hover{
+	opacity: 0.7;
 }
 
 
@@ -779,6 +944,7 @@ nav li:hover .menu-sub3{
 .slideshow-container2 {
   position: relative;
   margin: auto;
+  max-width: 1500px;
 }
 
 .first {
@@ -828,13 +994,15 @@ nav li:hover .menu-sub3{
 	margin:0;
 	text-align:center;
 	font-weight: 600;
-	font-size:2vw;
+	/*font-size:2vw;*/
+	font-size: clamp(1.4rem, 2vw, 1.8rem);
 }
 
 .parent1 h2{
 	margin:0;
 	margin-left: 5px;
-	font-size:1vw;
+	/*font-size:1vw;*/
+	font-size: clamp(0.7rem, 1vw, 1rem);
 	cursor: pointer;
 	font-weight: 500;
 	padding-bottom:10px;
@@ -903,7 +1071,8 @@ img{
   	display: flex;
   	font-family: "Poppins";
   	font-weight: 600;
-  	font-size: 1.2vw;
+  	/*font-size: 1.2vw;*/
+  	font-size: clamp(0.9rem, 1.2vw, 1.2rem);
   	padding-bottom: 10px;
   	margin-bottom: 10px;
   	background-color: #f2f2f2;
@@ -916,7 +1085,8 @@ img{
   	display: flex;
   	font-family: "Poppins";
   	font-weight: 600;
-  	font-size: 0.8vw;
+  	/*font-size: 0.8vw;*/
+  	font-size: clamp(0.6rem, 0.8vw, 0.8rem);
   	padding-bottom: 15px;
   	background-color: #f2f2f2;
   	text-align: center;
@@ -969,7 +1139,9 @@ img{
 
 .item .grid-lil-butt2 a{
 	color:white;
-	font-size:0.8vw;
+	/*font-size:0.8vw;*/
+	padding-right: 3px;
+	font-size: clamp(0.5rem, 0.8vw, 0.8rem);
 }
 
 
@@ -1003,39 +1175,11 @@ img{
 	}
 
 	/*setting up the navigation bar*/
-	.nav-container .nav-links.left .menu-sub3,
-	.nav-container .nav-links.left .menu-opacity,
-	.nav-container .nav-links.left .menu-background{
+	.nav-container .nav-links{
 		display: none;
 	}
-	.nav-container .left,
-	.nav-container .right{
+	nav .min-nav-container{
 		display: block;
-		position: fixed;
-		top:42vh;
-		border-top:1px solid lightgrey;
-		right:-100%;
-		height: 58vh;
-		width: 100%;
-		max-width: 300px;
-		background: white;
-		text-align: center;
-		z-index: 998;
-		transition: all 0.3s ease;
-	}
-	.nav-container .left{
-		top:0;
-		margin-right: 100px;
-		right:-100%;
-		height: 42vh;
-		padding-top: 40px;
-		border-top:0px;
-	}
-	.nav-container .left.menu-active{
-		right:-100px;
-	}
-	.nav-container .right.menu-active{
-		right:0;
 	}
 	.menu-opacity-res{
 		position: fixed;
@@ -1050,31 +1194,14 @@ img{
 		display: none;
 	}
 
-	.nav-links > li > a{
-		color:black;
-		text-decoration: none;
-		font-size: 19px;
-		font-weight: 500;
-		opacity: 0.5;
-		transition: all 0.3s ease;
-	}
-
-	.nav-links > li > a:hover{
-		opacity: 1;
-		background: white;
-		color:black;
-	}
-	.nav-links > li > a::after{
-		content:'   >';
-	}
-
 	/*setting up the search bar*/
 	.search-icon{
 		font-size:18px;
 		display: flex;
-		position: fixed;
-		top: 25px;
-		right: 65px;
+		justify-content: center;
+		position: relative;
+		top: 0px;
+		margin-right: 10px;
 		cursor: pointer;
 		width: 25px;
 		background: white;
@@ -1082,8 +1209,32 @@ img{
 	}
 }
 
+@media (max-width: 1100px){
+	/*setting up the img in the flexbox slideshow*/
+	.banner-img{
+		width: 485px;
+	}
 
+	/*setting up the images and buttons in the gridbox slideshow*/
+	.parent2 {
+		grid-template-columns: 2fr 1fr 1fr;
+	}
+	.item .grid-lil-box .grid-lil-box2{
+	  	height: 20px;
+		width: 65px;
+	}
+}
 
+@media (max-width: 950px){
+	/*setting up the gridbox slideshow*/
+	.parent2 {
+		width: 100%;
+	}
+}
 
-
-
+@media (max-width: 875px){
+	/*setting up the underline in the flexbox slideshow*/
+	.banner .am{
+		text-underline-offset: 4px;
+	}
+}
