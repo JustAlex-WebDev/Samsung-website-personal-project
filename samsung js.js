@@ -1,7 +1,11 @@
 //making the navigation bar responsive
 const minMenu = document.querySelector(".min-nav-container");
 const minLinks = document.querySelector(".min-nav-lists");
+const minMinLists = document.querySelector(".min-menu-sub3-list");
+const minMinLinks = document.querySelector(".min-menu-sub3-list-link");
 const minMinMenu = document.querySelector(".min-menu-sub3");
+const minMinMinMenu = document.querySelector(".min-menu-sub4");
+const minMinMinBtn = document.querySelector(".min-menu-sub4-title");
 const menuBtn = document.querySelector(".menu-btn");
 const cancelBtn = document.querySelector(".cancel-btn");
 const gobackBtn = document.querySelector(".goback-btn");
@@ -23,12 +27,33 @@ cancelBtn.onclick = ()=>{
 minLinks.onclick = ()=>{
 	minMinMenu.classList.add("menu-active2");
 	gobackBtn.style.display = "block";
+	minMinLinks.style.display = "block";
 }
 gobackBtn.onclick = ()=>{
 	minMinMenu.classList.remove("menu-active2");
+	minMinMinMenu.classList.remove("menu-active3");
 	gobackBtn.style.display = "none";
+	minMinMinBtn.style.display = "none";
 }
 
+minMinLists.onclick = ()=>{
+	minMinMinMenu.classList.add("menu-active3");
+	minMinLinks.style.display = "none";
+	minMinMinBtn.style.display = "block";
+}
+minMinMinBtn.onclick = ()=>{
+	minMinMinMenu.classList.remove("menu-active3");
+	minMinLinks.style.display = "block";
+	minMinMinBtn.style.display = "none";
+}
+/*minMinLists.onclick = ()=>{
+	minMinMinMenu.classList.add("menu-active3");
+	minMinLinks.style.display = "block";
+}
+minMinMinList.onclick = ()=>{
+	minMinMinMenu.classList.remove("menu-active3");
+	minMinLinks.style.display = "block";
+}*/
 //making the nav-list-links stay active while the sub-menues are hovered over
 /*function NavListLinksActive() {
 const navListLinks = document.querySelector(".nav-list-links");

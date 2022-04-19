@@ -494,6 +494,7 @@ nav li:hover .menu-sub3{
 
 /*setting up the min-sub-menues*/
 nav .min-nav-container{
+	overflow: auto;
 	position: fixed;
 	text-align: center;
 	background: white;
@@ -557,7 +558,7 @@ nav .min-nav-container{
 }
 
 .min-menu-sub3.menu-active2{
-	opacity: 1;
+	opacity: 1;	
 	right:0;
 }
 
@@ -586,6 +587,131 @@ nav .min-nav-container{
 
 .min-menu-sub3 .min-menu-sub3-list:hover .min-menu-sub3-list-link{
 	opacity: 1;
+}
+
+.min-menu-sub4-title{
+	position: absolute;
+	z-index: 1000;
+	top:107px;
+	left:76.5px;
+	display: none;
+}
+.min-menu-sub4-title .min-menu-sub4-list-title{
+	list-style: none;
+}
+
+.min-menu-sub4-title .min-menu-sub4-list-title .min-menu-sub4-list-link-title{
+	font-size: 19px;
+	color:black;
+	opacity: 1;
+	font-weight: 500;
+}
+.min-menu-sub4{
+	text-align: center;
+	max-width: 300px;
+	display: none;
+	opacity: 1;
+	width: 100%;
+	transform: translateY(-40px);
+	border-bottom: 1px solid lightgrey;
+	transition: all 0.3s ease;
+}
+
+.min-menu-sub4.menu-active3{	
+	display: block;
+	transform: translateY(0px);
+}
+
+.min-menu-sub4 .min-menu-sub4-list{
+	list-style: none;
+}
+
+.min-menu-sub4 .min-menu-sub4-list .min-menu-sub4-list-link{
+	font-size: 16px;
+	color:black;
+	opacity: 0.5;
+	font-weight: 600;
+}
+
+.min-menu-sub4-list .min-menu-sub4-list-link:hover{
+	opacity: 1;
+}
+
+.min-menu-sub5{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	text-align: center;	
+}
+
+.min-menu-sub5-img img{
+	width: 90%;
+	height: auto;
+	margin-left: 12px;
+	margin-top:30px;
+}
+
+.min-menu-sub5 .min-menu-sub5-title .min-menu-sub5-title-link{
+	font-size: 16px;
+	font-weight: 600;
+	text-decoration: none;
+	color:black;
+}
+
+.min-menu-sub5-title{
+	margin-bottom: -35px;
+}
+
+.min-menu-sub5 .min-menu-sub5-description .min-menu-sub5-description-list{
+	list-style: none;
+}
+
+.min-menu-sub5 .min-menu-sub5-description .min-menu-sub5-description-link{
+	font-size: 13px;
+	font-weight: 600;
+	color: black;
+}
+
+.min-menu-sub5-description .min-menu-sub5-description-link{
+	position:relative;
+	color:black;
+    padding:7px 0px;
+}
+
+.min-menu-sub5-description .min-menu-sub5-description-link.active::before{
+	content:'';
+    position:absolute;
+    bottom:5px;
+    left:0;
+    width:100%;
+    height:2px;
+    background:black;
+    transition:all 0.4s ease;
+}
+
+.min-menu-sub5-description .min-menu-sub5-description-link.active:hover::before{
+	display: none;
+}
+
+.min-menu-sub5-description .min-menu-sub5-description-link::after{
+	content:'';
+    position:absolute;
+    bottom:5px;
+    width:0%;
+    left:50%;
+    height:2px;
+    background:black;
+    transition:all 0.4s ease;
+}
+
+.min-menu-sub5-description .min-menu-sub5-description-link:hover::after{
+	left:0;
+    width:100%;
+}
+
+.min-menu-sub5 .min-menu-sub5-img img:hover{
+	transform: scale(1.01);
 }
 
 
@@ -763,7 +889,9 @@ nav .min-nav-container{
 .slideshow-container {
   position: relative;
   margin: auto;
+  width: 100%;
   max-width: 1500px;
+  min-width: 200px;
 }
 
 .mySlides {
@@ -816,7 +944,14 @@ nav .min-nav-container{
 	align-items: center;
 	text-align: center;
 	justify-content: center;
-	gap:30px;
+	min-width: 200px;
+	gap:5%;
+}
+
+.banner .banner-des.second-des{
+	align-items: center;
+	text-align: center;
+	justify-content: center;
 }
 
 .banner-img{
@@ -833,6 +968,7 @@ nav .min-nav-container{
 }
 
 .banner h1{
+	min-width: 200px;
 	padding-bottom:15px;
 	margin:0;
 	background: white;
@@ -859,7 +995,7 @@ nav .min-nav-container{
 
 .banner .am{
 	text-decoration: 2px solid underline;
-	text-underline-offset: 8px;
+	text-underline-offset: 5px;
 }
 
 .banner .bm{
@@ -874,7 +1010,7 @@ nav .min-nav-container{
 	list-style: none;
 	margin:0;
 	cursor: pointer;
-	margin-left: 5px;
+	/*margin-left: 5px;*/
 	/*font-size:0.8vw;*/
 	font-size: clamp(0.6rem, 0.8vw, 0.8rem);
 	font-weight: 500;
@@ -1152,18 +1288,7 @@ img{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+/*making the site responsive*/
 /*making the nav bar responsive*/
 @media (max-width: 1215px){
 	/*setting up the open and close menu icons*/
@@ -1236,5 +1361,76 @@ img{
 	/*setting up the underline in the flexbox slideshow*/
 	.banner .am{
 		text-underline-offset: 4px;
+	}
+}
+
+@media (max-width: 606px){
+	/*setting up the flexbox slideshow
+	to be fully responsive*/
+	.banner-img{
+		width: 100%;
+	}
+	.banner h1{
+		padding-bottom: 5px;
+		font-size:3.7vw;
+		/*font-size: clamp(1.4rem, 2vw, 1.8rem);*/
+	}
+	.banner h2{
+		padding: 0;
+		font-size:1.8vw;
+		/*font-size: clamp(0.7rem, 1vw, 1rem);*/
+	}
+	.list{
+		font-size:1.5vw;
+		/*font-size: clamp(0.6rem, 0.8vw, 0.8rem);*/
+		padding-bottom:10px;
+	}
+	.banner .lil-butt2{
+		margin-bottom: 7px;
+	}
+	.banner .lil-butt2 a{
+		padding: 4.5px 8px;
+		margin-bottom: 10px;
+		font-size:1.6vw;
+		/*font-size: clamp(0.6rem, 0.8vw, 0.8rem);*/
+	}
+	.banner .am{
+		text-decoration: 1px solid underline;
+		text-underline-offset: 3px;
+	}
+}
+
+@media (max-width: 345px){
+	/*setting up the flexbox slideshow text
+	underline*/
+	.banner .am{
+		text-decoration: 1px solid underline;
+		text-underline-offset: 2.5px;
+	}
+}
+
+@media (max-width: 240px){
+	/*setting up the flexbox slideshow text
+	underline*/
+	.banner .am{
+		text-decoration: 0.1px solid underline;
+		text-underline-offset: 1.5px;
+	}
+}
+
+@media (max-width: 200px){
+	/*setting up the flexbox slideshow text
+	to be fully responsive*/
+	.banner h1{
+		font-size:8px;
+	}
+	.banner h2{
+		font-size:3px;
+	}
+	.list{
+		font-size:3px;
+	}
+	.banner .lil-butt2 a{
+		font-size:3.5px;
 	}
 }
