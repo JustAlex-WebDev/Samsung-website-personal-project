@@ -891,7 +891,7 @@ nav .min-nav-container{
   margin: auto;
   width: 100%;
   max-width: 1500px;
-  min-width: 200px;
+  min-width: 300px;
 }
 
 .mySlides {
@@ -944,8 +944,8 @@ nav .min-nav-container{
 	align-items: center;
 	text-align: center;
 	justify-content: center;
-	min-width: 200px;
-	gap:5%;
+	min-width: 300px;
+	gap:30px;
 }
 
 .banner .banner-des.second-des{
@@ -968,7 +968,7 @@ nav .min-nav-container{
 }
 
 .banner h1{
-	min-width: 200px;
+	min-width: 300px;
 	padding-bottom:15px;
 	margin:0;
 	background: white;
@@ -981,7 +981,7 @@ nav .min-nav-container{
 .banner h2{
 	margin:0;
 	cursor: pointer;
-	margin-left: 5px;
+	margin-left: 0px;
 	/*font-size:1vw;*/
 	font-size: clamp(0.7rem, 1vw, 1rem);
 	font-weight: 500;
@@ -1081,6 +1081,7 @@ nav .min-nav-container{
   position: relative;
   margin: auto;
   max-width: 1500px;
+  min-width: 300px;
 }
 
 .first {
@@ -1151,7 +1152,7 @@ nav .min-nav-container{
 
 .parent1 .am2{
 	text-decoration: 2px solid underline;
-	text-underline-offset: 8px;
+	text-underline-offset: 4px;
 }
 
 .parent1 .bm2{
@@ -1191,7 +1192,11 @@ nav .min-nav-container{
 	display: grid;
 	grid-row: span 2;
   	font-size: 2vw;
-  	padding-top: 100px;
+  	padding-top: 70px;
+}
+
+.item:nth-child(1) img{
+	min-width: 80px;
 }
 
 .item:nth-child(3) img{
@@ -1342,6 +1347,7 @@ img{
 
 	/*setting up the images and buttons in the gridbox slideshow*/
 	.parent2 {
+		gap:18px;
 		grid-template-columns: 2fr 1fr 1fr;
 	}
 	.item .grid-lil-box .grid-lil-box2{
@@ -1353,6 +1359,7 @@ img{
 @media (max-width: 950px){
 	/*setting up the gridbox slideshow*/
 	.parent2 {
+		gap:15px;
 		width: 100%;
 	}
 }
@@ -1361,6 +1368,20 @@ img{
 	/*setting up the underline in the flexbox slideshow*/
 	.banner .am{
 		text-underline-offset: 4px;
+	}
+}
+
+@media (max-width: 800px){
+	/*setting up the gridbox slideshow*/
+	.parent2 {
+		gap:12px;
+		grid-template-columns: 50% 25% 25%;
+	   	padding-right: 5%;
+	  	padding-left: 5%;	
+	}
+	/*setting up the go to the top button*/
+	#myBtn{
+		padding:12px;
 	}
 }
 
@@ -1386,7 +1407,7 @@ img{
 		padding-bottom:10px;
 	}
 	.banner .lil-butt2{
-		margin-bottom: 7px;
+		margin-bottom: 10px;
 	}
 	.banner .lil-butt2 a{
 		padding: 4.5px 8px;
@@ -1396,7 +1417,37 @@ img{
 	}
 	.banner .am{
 		text-decoration: 1px solid underline;
-		text-underline-offset: 3px;
+		text-underline-offset: 2.7px;
+	}
+	.banner .banner-des{
+		gap:5%;
+	}
+
+	/*setting up the gridbox slideshow text*/
+	.parent1 h1{
+		font-size:3.7vw;
+	}
+	.parent1 h2{
+		text-align: center;
+		font-size:1.8vw;
+	}
+	.item .title1{
+	  	font-size: 2.2vw;
+	}
+	.item .title{
+	  	font-size: 1.5vw;
+	}
+	.item .grid-lil-butt2 a{
+		font-size:1.3vw;
+	}
+	.item .grid-lil-box .grid-lil-box2{
+	  	height: 4vw;
+		width: 10.5vw;
+	}
+
+	/*setting up the go to the top button*/
+	#myBtn{
+		padding:10px;
 	}
 }
 
@@ -1405,32 +1456,47 @@ img{
 	underline*/
 	.banner .am{
 		text-decoration: 1px solid underline;
-		text-underline-offset: 2.5px;
+		text-underline-offset: 2px;
 	}
 }
 
-@media (max-width: 240px){
-	/*setting up the flexbox slideshow text
-	underline*/
-	.banner .am{
-		text-decoration: 0.1px solid underline;
-		text-underline-offset: 1.5px;
-	}
-}
-
-@media (max-width: 200px){
+@media (max-width: 340px){
 	/*setting up the flexbox slideshow text
 	to be fully responsive*/
 	.banner h1{
-		font-size:8px;
+		font-size:11px;
 	}
 	.banner h2{
-		font-size:3px;
+		font-size:5.8px;
 	}
 	.list{
-		font-size:3px;
+		font-size:5px;
 	}
 	.banner .lil-butt2 a{
-		font-size:3.5px;
+		font-size:5.5px;
+	}
+}
+
+@media (max-width: 300px){
+	/*setting up the gridbox slideshow text
+	to be fully responsive*/
+	.parent1 h1{
+		font-size:11px;
+	}
+	.parent1 h2{
+		font-size:5px;
+	}
+	.item .title1{
+	  	font-size: 6.5px;
+	}
+	.item .title{
+	  	font-size: 4.5px;
+	}
+	.item .grid-lil-butt2 a{
+		font-size:3.8px;
+	}
+	.item .grid-lil-box .grid-lil-box2{
+	  	height:13px;
+		width: 40px;
 	}
 }
