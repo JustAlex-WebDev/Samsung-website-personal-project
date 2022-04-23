@@ -461,7 +461,7 @@ nav li:hover .menu-sub3{
 .goback-btn {
     box-sizing: border-box;
     position: relative;
-    display: block;
+    display: none;
     transform: scale(var(--ggs,1));
     width: 22px;
     height: 22px
@@ -494,16 +494,16 @@ nav li:hover .menu-sub3{
 
 /*setting up the min-sub-menues*/
 nav .min-nav-container{
-	overflow: auto;
+	width: 300px;
+    height: 100vh;
+    overflow: auto;
+    overflow-x: hidden;
 	position: fixed;
 	text-align: center;
 	background: white;
 	top:0;
 	right:-100%;
-	max-width: 300px;
-	width: 100%;
 	padding: 0;
-	height: 100vh;
 	display: none;
 	z-index: 998;
 	transition: all 0.3s ease;
@@ -539,17 +539,18 @@ nav .min-nav-container{
 }
 
 .min-nav-container.menu-active{
-	right:0px;
+	right:5px;
 }
 
 .min-menu-sub3{
-	position: fixed;
+	overflow: auto;
+    overflow-x: hidden;
+	position: absolute;
 	text-align: center;
 	background: white;
 	top:0;
 	right:-100%;
-	max-width: 300px;
-	width: 100%;
+	width: 300px;
 	height: 100vh;
 	padding: 0;
 	display: block;
@@ -559,7 +560,7 @@ nav .min-nav-container{
 
 .min-menu-sub3.menu-active2{
 	opacity: 1;	
-	right:0;
+	right:5px;
 }
 
 .min-menu-sub3 .min-menu-sub3-list{
@@ -593,7 +594,7 @@ nav .min-nav-container{
 	position: absolute;
 	z-index: 1000;
 	top:107px;
-	left:76.5px;
+	right:77px;
 	display: none;
 }
 .min-menu-sub4-title .min-menu-sub4-list-title{
@@ -648,7 +649,7 @@ nav .min-nav-container{
 .min-menu-sub5-img img{
 	width: 90%;
 	height: auto;
-	margin-left: 12px;
+	margin-left: 13px;
 	margin-top:30px;
 }
 
